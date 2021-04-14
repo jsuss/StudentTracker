@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace StudentTracker
 {
@@ -6,7 +7,16 @@ namespace StudentTracker
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var students = new List<Student>();
+            bool adding = true;
         }
+    }
+    class Student
+    {
+        public string Name;
+        public int Grade;
+        public string Birthday;
+        public string Address;
+        public long Phone;
     }
 }
