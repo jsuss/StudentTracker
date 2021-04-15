@@ -29,7 +29,7 @@ namespace StudentTracker
                 newStudent.Address = Console.ReadLine();
 
                 Console.Write("Enter phone number: ");
-                newStudent.Phone = long.Parse(Console.ReadLine());
+                newStudent.SetPhone(long.Parse(Console.ReadLine()));
 
                 // Add new instance of Student to students list
                 students.Add(newStudent);
@@ -54,6 +54,10 @@ namespace StudentTracker
         public int Grade;
         public string Birthday;
         public string Address;
-        public long Phone;
+        private long phone;
+        public void SetPhone(long number)
+        {
+            phone = number;
+        }
     }
 }
