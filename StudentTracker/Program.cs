@@ -41,7 +41,7 @@ namespace StudentTracker
 
             // Display all students' information
             foreach (Student student in students)
-                Console.WriteLine("Name: {0} - Grade: {1}", student.Name, student.Grade);
+                Console.WriteLine("Name: {0} - Grade: {1} - Phone: {2}", student.Name, student.Grade, student.Phone);
 
             Console.WriteLine("Student Count: {0}", Student.Count);
 
@@ -53,16 +53,24 @@ namespace StudentTracker
             Console.WriteLine(importedStudent.Name);
         }
     }
-    class Student
+
+    class Member
+    {
+        public string Name;
+        public string Address;
+        protected long phone;
+        public long Phone
+        {
+            set { phone = value; }
+            get { return phone; }
+        }
+
+    }
+    class Student : Member
     {
         static public int Count = 0;
-
-        public string Name;
         public int Grade;
         public string Birthday;
-        public string Address;
-        private long phone;
-        
         public Student() { }
         public Student(string name, int grade, string birthday, string address, long phone)
         {
@@ -71,10 +79,11 @@ namespace StudentTracker
             Birthday = birthday;
             Address = address;
             Phone = phone;
-        }
-        public long Phone
-        {
-            set { phone = value; }
-        }
+        }     
     }
+    class Teacher : Member
+    {
+        public string Subject;
+    }
+
 }
