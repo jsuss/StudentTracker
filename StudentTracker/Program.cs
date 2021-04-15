@@ -46,6 +46,12 @@ namespace StudentTracker
             Console.WriteLine("Student Count: {0}", Student.Count);
 
         }
+
+        static void Import()
+        {
+            var importedStudent = new Student("Jesus", 98, "November", "301 Vermont", 7603909370);
+            Console.WriteLine(importedStudent.Name);
+        }
     }
     class Student
     {
@@ -56,6 +62,16 @@ namespace StudentTracker
         public string Birthday;
         public string Address;
         private long phone;
+        
+        public Student() { }
+        public Student(string name, int grade, string birthday, string address, long phone)
+        {
+            Name = name;
+            Grade = grade;
+            Birthday = birthday;
+            Address = address;
+            Phone = phone;
+        }
         public long Phone
         {
             set { phone = value; }
