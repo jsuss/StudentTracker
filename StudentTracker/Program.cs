@@ -8,22 +8,16 @@ namespace StudentTracker
         static void Main(string[] args)
         {
             var students = new List<Student>();
-            // While value is true, users are able to add more students
-            bool adding = true;
+            bool addStudents = true;
 
-            while (adding)
+            while (addStudents)
             {
-                // Create new instance of Student
                 Student newStudent = new Student();
 
                 newStudent.Name = Util.Console.Ask("Enter name: ");
-
                 newStudent.Grade = int.Parse(Util.Console.Ask("Enter grade: "));
-
                 newStudent.Birthday = Util.Console.Ask("Enter birthday: ");
-
                 newStudent.Address = Util.Console.Ask("Enter address: ");
-
                 newStudent.Phone = long.Parse(Util.Console.Ask("Enter phone number: "));
 
                 // Add new instance of Student to students list
@@ -31,9 +25,8 @@ namespace StudentTracker
                 Student.Count++;
 
                 Console.WriteLine("Add another student? y/n");
-                // Check if user decided to stop adding users
                 if (Console.ReadLine() != "y")
-                    adding = false;
+                    addStudents = false;
             }
             // Extra line for formatting
             Console.WriteLine();
