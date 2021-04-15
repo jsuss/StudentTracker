@@ -16,25 +16,19 @@ namespace StudentTracker
                 // Create new instance of Student
                 Student newStudent = new Student();
 
-                Console.Write("Enter name: ");
-                newStudent.Name = Console.ReadLine();
+                newStudent.Name = Util.Console.Ask("Enter name: ");
 
-                Console.Write("Enter grade: ");
-                newStudent.Grade = int.Parse(Console.ReadLine());
+                newStudent.Grade = int.Parse(Util.Console.Ask("Enter grade: "));
 
-                Console.Write("Enter birthday: ");
-                newStudent.Birthday = Console.ReadLine();
+                newStudent.Birthday = Util.Console.Ask("Enter birthday: ");
 
-                Console.Write("Enter address: ");
-                newStudent.Address = Console.ReadLine();
+                newStudent.Address = Util.Console.Ask("Enter address: ");
 
-                Console.Write("Enter phone number: ");
-                newStudent.Phone = long.Parse(Console.ReadLine());
+                newStudent.Phone = long.Parse(Util.Console.Ask("Enter phone number: "));
 
                 // Add new instance of Student to students list
                 students.Add(newStudent);
                 Student.Count++;
-                Console.WriteLine("Student Count: {0}", Student.Count);
                 
                 Console.WriteLine("Add another student? y/n");
                 // Check if user decided to stop adding users
@@ -48,11 +42,14 @@ namespace StudentTracker
             // Display all students' information
             foreach (Student student in students)
                 Console.WriteLine("Name: {0} - Grade: {1}", student.Name, student.Grade);
+
+            Console.WriteLine("Student Count: {0}", Student.Count);
+
         }
     }
     class Student
     {
-        static public int Count;
+        static public int Count = 0;
 
         public string Name;
         public int Grade;
