@@ -11,7 +11,7 @@ namespace StudentTracker
             // While value is true, users are able to add more students
             bool adding = true;
 
-            while(adding)
+            while (adding)
             {
                 // Create new instance of Student
                 Student newStudent = new Student();
@@ -29,13 +29,12 @@ namespace StudentTracker
                 // Add new instance of Student to students list
                 students.Add(newStudent);
                 Student.Count++;
-                
+
                 Console.WriteLine("Add another student? y/n");
                 // Check if user decided to stop adding users
                 if (Console.ReadLine() != "y")
                     adding = false;
             }
-
             // Extra line for formatting
             Console.WriteLine();
 
@@ -44,16 +43,13 @@ namespace StudentTracker
                 Console.WriteLine("Name: {0} - Grade: {1} - Phone: {2}", student.Name, student.Grade, student.Phone);
 
             Console.WriteLine("Student Count: {0}", Student.Count);
-
         }
-
         static void Import()
         {
             var importedStudent = new Student("Jesus", 98, "November", "301 Vermont", 7603909370);
             Console.WriteLine(importedStudent.Name);
         }
     }
-
     class Member
     {
         public string Name;
@@ -64,7 +60,6 @@ namespace StudentTracker
             set { phone = value; }
             get { return phone; }
         }
-
     }
     class Student : Member
     {
@@ -85,5 +80,4 @@ namespace StudentTracker
     {
         public string Subject;
     }
-
 }
