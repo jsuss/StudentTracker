@@ -28,7 +28,7 @@ namespace StudentTracker
                 Console.Write("Enter address: ");
                 newStudent.Address = Console.ReadLine();
 
-                Console.Write("Enter name: ");
+                Console.Write("Enter phone number: ");
                 newStudent.Phone = long.Parse(Console.ReadLine());
 
                 // Add new instance of Student to students list
