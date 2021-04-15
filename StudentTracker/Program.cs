@@ -33,6 +33,8 @@ namespace StudentTracker
 
                 // Add new instance of Student to students list
                 students.Add(newStudent);
+                Student.Count++;
+                Console.WriteLine("Student Count: {0}", Student.Count);
                 
                 Console.WriteLine("Add another student? y/n");
                 // Check if user decided to stop adding users
@@ -50,6 +52,8 @@ namespace StudentTracker
     }
     class Student
     {
+        static public int Count;
+
         public string Name;
         public int Grade;
         public string Birthday;
