@@ -11,5 +11,31 @@ namespace Util
             System.Console.Write(question);
             return System.Console.ReadLine();
         }
+        static public int AskInt(string question)
+        {
+            try
+            {
+                System.Console.Write(question);
+                return int.Parse(System.Console.ReadLine());
+            }
+            catch (Exception)
+            {
+
+                throw new FormatException("Input was not a number.");
+            }
+        }
+        static public long AskLong(string question)
+        {
+            try
+            {
+                System.Console.Write(question);
+                return long.Parse(System.Console.ReadLine());
+            }
+            catch (Exception)
+            {
+
+                throw new FormatException("Input was not a number.");
+            }
+        }
     }
 }

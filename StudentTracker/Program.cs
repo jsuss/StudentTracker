@@ -12,21 +12,33 @@ namespace StudentTracker
 
             while (addStudents)
             {
-                Student newStudent = new Student();
+                try
+                {
+                    Student newStudent = new Student();
 
-                newStudent.Name = Util.Console.Ask("Enter name: ");
-                newStudent.Grade = int.Parse(Util.Console.Ask("Enter grade: "));
-                newStudent.Birthday = Util.Console.Ask("Enter birthday: ");
-                newStudent.Address = Util.Console.Ask("Enter address: ");
-                newStudent.Phone = long.Parse(Util.Console.Ask("Enter phone number: "));
+                    newStudent.Name = Util.Console.Ask("Enter name: ");
+                    newStudent.Grade = Util.Console.AskInt("Enter grade: ");            
+                    newStudent.Birthday = Util.Console.Ask("Enter birthday: ");
+                    newStudent.Address = Util.Console.Ask("Enter address: ");
+                    newStudent.Phone = Util.Console.AskLong("Enter phone number: ");
 
-                // Add new instance of Student to students list
-                students.Add(newStudent);
-                Student.Count++;
+                    // Add new instance of Student to students list
+                    students.Add(newStudent);
+                    Student.Count++;
 
-                Console.WriteLine("Add another student? y/n");
-                if (Console.ReadLine() != "y")
-                    addStudents = false;
+                    Console.WriteLine("Add another student? y/n");
+                    if (Console.ReadLine() != "y")
+                        addStudents = false;
+                }
+                catch (FormatException msg)
+                {
+                    Console.WriteLine(msg.Message);
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Error adding student, please try again.");
+                }
+
             }
             // Extra line for formatting
             Console.WriteLine();
