@@ -22,7 +22,6 @@ namespace StudentTracker
                     newStudent.Address = Util.Console.Ask("Enter address: ");
                     newStudent.Phone = Util.Console.AskLong("Enter phone number: ");
 
-                    // Add new instance of Student to students list
                     students.Add(newStudent);
                     Student.Count++;
 
@@ -38,12 +37,10 @@ namespace StudentTracker
                 {
                     Console.WriteLine("Error adding student, please try again.");
                 }
-
             }
-            // Extra line for formatting
-            Console.WriteLine();
 
-            // Display all students' information
+            Console.WriteLine(); // Extra line for formatting
+
             foreach (Student student in students)
                 Console.WriteLine("Name: {0} - Grade: {1} - Phone: {2}", student.Name, student.Grade, student.Phone);
 
