@@ -12,9 +12,11 @@ namespace StudentTracker
     class Program
     {
         static List<Student> students = new List<Student>();
-
         static void Main(string[] args)
         {
+            Payroll payroll = new Payroll();
+            payroll.PayAll();
+
             bool addStudents = true;
 
             while (addStudents)
@@ -106,9 +108,5 @@ namespace StudentTracker
             Address = address;
             Phone = phone;
         }     
-    }
-    class Teacher : Member
-    {
-        public string Subject;
     }
 }

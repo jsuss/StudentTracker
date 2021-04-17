@@ -20,7 +20,6 @@ namespace Util
             }
             catch (Exception)
             {
-
                 throw new FormatException("Input was not a number.");
             }
         }
@@ -33,7 +32,6 @@ namespace Util
             }
             catch (Exception)
             {
-
                 throw new FormatException("Input was not a number.");
             }
         }
