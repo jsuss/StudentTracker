@@ -79,31 +79,4 @@ namespace StudentTracker
             }
         }
     }
-    class Member
-    {
-        public string Name;
-        public string Address;
-        protected long phone;
-        public long Phone
-        {
-            set { phone = value; }
-            get { return phone; }
-        }
-    }
-    class Student : Member
-    {
-        static public int Count = 0;
-        public int Grade;
-        public string Birthday;
-        public School School;
-        public Student() { }
-        public Student(string name, int grade, string birthday, string address, long phone)
-        {
-            Name = name;
-            Grade = grade;
-            Birthday = birthday;
-            Address = address;
-            Phone = phone;
-        }     
-    }
 }
