@@ -6,13 +6,8 @@ namespace StudentTracker
 { 
     class Member
     {
-        public string Name;
-        public string Address;
-        protected long phone;
-        public long Phone
-        {
-            set { phone = value; }
-            get { return phone; }
-        }
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public long Phone { get; set; }
     }
 }
