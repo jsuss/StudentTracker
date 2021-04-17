@@ -51,12 +51,12 @@ namespace StudentTracker
                 }
             }
 
-            ShowGrade("Tom");
+            //ShowGrade("Tom");
 
             Console.WriteLine(); // Extra line for formatting
 
             foreach (Student student in students)
-                Console.WriteLine("Name: {0} - Grade: {1} - Phone: {2}", student.Name, student.Grade, student.Phone);
+                Console.WriteLine($"Name: {student.Name} - Grade: {student.Grade} - Phone: {student.Phone}");
 
             Exports();
 
@@ -89,7 +89,7 @@ namespace StudentTracker
         {
             var found = students.Find(student => student.Name == name);
 
-            Console.WriteLine("{0}'s Grade: {1}", found.Name, found.Grade);
+            Console.WriteLine($"{found.Name}'s Grade: {found.Grade}");
         }
     }
 }
