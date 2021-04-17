@@ -14,12 +14,17 @@ namespace StudentTracker
         static List<Student> students = new List<Student>();
         static void Main(string[] args)
         {
+            Logger.Log("Tracker started");
+            Payroll payroll = new Payroll();
+            payroll.PayAll();
+
             bool addStudents = true;
 
             while (addStudents)
             {
                 try
                 {
+                    Logger.Log("Adding new student");
                     Student newStudent = new Student();
 
                     newStudent.Name = Util.Console.Ask("Enter name: ");

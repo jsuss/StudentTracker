@@ -17,12 +17,18 @@ namespace StudentTracker
             payees.Add(new Teacher());
             payees.Add(new Teacher());
             payees.Add(new Principal());
+
+            Logger.Log("Payroll started", "Payroll");
+
         }
         public void PayAll()
         {
             foreach (var payee in payees)
             {
                 payee.Pay();
+
+                Logger.Log("PayAll completed", "Payroll", 2);
+
             }
         }
     }
