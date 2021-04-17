@@ -14,9 +14,6 @@ namespace StudentTracker
         static List<Student> students = new List<Student>();
         static void Main(string[] args)
         {
-            Payroll payroll = new Payroll();
-            payroll.PayAll();
-
             bool addStudents = true;
 
             while (addStudents)

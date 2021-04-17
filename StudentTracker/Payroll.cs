@@ -10,16 +10,20 @@ namespace StudentTracker
     }
     class Payroll
     {
-        Teacher teacher1 = new Teacher();
-        Teacher teacher2 = new Teacher();
+        List<IPayee> payees = new List<IPayee>();
 
-        Principal principal = new Principal();
-       public void PayAll()
+        public Payroll()
         {
-            teacher1.Pay();
-            teacher2.Pay();
-            principal.Pay();
-
+            payees.Add(new Teacher());
+            payees.Add(new Teacher());
+            payees.Add(new Principal());
+        }
+        public void PayAll()
+        {
+            foreach (var payee in payees)
+            {
+                payee.Pay();
+            }
         }
     }
 }
