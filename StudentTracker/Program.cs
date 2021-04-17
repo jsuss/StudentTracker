@@ -46,6 +46,8 @@ namespace StudentTracker
                 }
             }
 
+            ShowGrade("Tom");
+
             Console.WriteLine(); // Extra line for formatting
 
             foreach (Student student in students)
@@ -77,6 +79,12 @@ namespace StudentTracker
                         break;
                 }
             }
+        }
+        static void ShowGrade(string name)
+        {
+            var found = students.Find(student => student.Name == name);
+
+            Console.WriteLine("{0}'s Grade: {1}", found.Name, found.Grade);
         }
     }
 }
